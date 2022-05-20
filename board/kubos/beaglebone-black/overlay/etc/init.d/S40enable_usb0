@@ -58,14 +58,6 @@ usb_iserialnumber="1234BBBK5678"
 usb_imanufacturer="BeagleBoard.org"
 usb_iproduct="BeagleBoneBlack"
 
-# Load the stuff needed for configfs
-modprobe cppi41
-modprobe musb-dsps
-modprobe musb-hdrc
-modprobe phy-am335x
-modprobe libcomposite
-
-
 # Set up our configfs filesystem
 mount none /sys/kernel/config -t configfs
 
@@ -90,7 +82,7 @@ echo 500 > configs/c.1/MaxPower
 mkdir -p configs/c.1/strings/0x409
 echo "BeagleBone Composite" > configs/c.1/strings/0x409/configuration
 
-mkdir functions/acm.0
+mkdir -p functions/acm.0
 mkdir functions/ecm.0
 mkdir functions/rndis.0
 # mkdir functions/mass_storage.0

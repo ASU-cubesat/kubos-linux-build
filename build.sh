@@ -2,7 +2,7 @@
 
 set -e -o pipefail
 
-buildroot_tar="buildroot-2019.02.2.tar.gz"
+buildroot_tar="buildroot-2022.02.1.tar.gz"
 buildroot_url="https://buildroot.uclibc.org/downloads/$buildroot_tar"
 
 board="$KUBOS_BOARD"
@@ -19,6 +19,10 @@ echo "Getting Buildroot"
 wget $buildroot_url && tar xzf $buildroot_tar && rm $buildroot_tar
 
 cd ./buildroot*
+
+git init 
+
+git config --local url."https://".insteadOf git://
 
 make BR2_EXTERNAL=../kubos-linux-build ${board}_defconfig
 

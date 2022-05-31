@@ -30,6 +30,7 @@
 # Mount up partitions with data
 ::sysinit:/bin/mount -o remount,rw /
 ::sysinit:/bin/mount -a
+::sysinit:/bin/mkdir -p /run/lock
 # Mount the Kubos directories which use partuuid
 ::sysinit:/bin/mount /home
 ::sysinit:/bin/mount /home/microsd
@@ -39,6 +40,8 @@
 ::sysinit:/bin/hostname -F /etc/hostname
 # now run any rc scripts
 ::sysinit:/etc/init.d/rcS
+# incremente the boot counter
+::sysinit:/usr/sbin/boot_counter
 # Run Monit in standard run-levels
 ::respawn:/usr/bin/monit -Ic /etc/monitrc
 

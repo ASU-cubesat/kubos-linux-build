@@ -16,3 +16,11 @@ iface sl0 inet static
         pointopoint 192.168.0.1
         pre-up slattach -s 115200 -p cslip /dev/ttyS5 &
         post-up route add 192.168.0.2 dev lo
+
+auto usb0
+iface usb0 inet static
+    address 192.168.7.2
+    netmask 255.255.255.0
+    network 192.168.7.0
+    gateway 192.168.7.1
+    dns-nameservers 8.8.8.8

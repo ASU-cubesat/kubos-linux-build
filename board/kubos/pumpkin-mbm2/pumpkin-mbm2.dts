@@ -149,6 +149,12 @@
 	pinctrl-0 = <&spi1_pins>;
 	ti,spi-num-cs = <1>;
 	cs-gpios = <&gpio3 17 0>;
+    /*
+     * Select the D0 pin as output and D1 as
+	 * input. The default is D0 as input and
+	 * D1 as output.
+	 */
+	ti,pindir-d0-out-d1-in;
 
 	status = "okay";
 

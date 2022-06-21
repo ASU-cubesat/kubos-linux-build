@@ -87,9 +87,9 @@
 
 	spi1_pins: pinmux_spi1_pins {
 		pinctrl-single,pins = <
-			0x190 (PIN_INPUT_PULLUP | MUX_MODE3)	/* SCLK - H1.21 */
-			0x194 (PIN_INPUT_PULLUP | MUX_MODE3)	/* MISO - H1.22 */
-			0x198 (PIN_OUTPUT_PULLUP | MUX_MODE3)	/* MOSI - H1.23 */
+			0x190 (PIN_INPUT_PULLUP  | MUX_MODE3)	/* SCLK - H1.21 */
+			0x194 (PIN_OUTPUT_PULLUP | MUX_MODE3)	/* MISO - H1.22 */
+			0x198 (PIN_INPUT_PULLUP  | MUX_MODE3)	/* MOSI - H1.23 */
 			0x19c (PIN_OUTPUT_PULLUP | MUX_MODE3)	/* CS   - H1.24 */
 		>;
 	};
